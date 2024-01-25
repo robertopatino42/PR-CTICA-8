@@ -1,6 +1,20 @@
 # PR-CTICA-8
 
-PROGRMACIÓN DE ESP32
+Dentro de este repositorio se muestra la manera de programar una ESP32 con el sensor DHT11 y además, que los datos obtenidos se vean reflejados en el programa Node-RED a través de una conexión WIFI.
+
+INTRODUCCIÓN
+
+La Esp32 la utilizamos en un entorno de adquision de datos, lo cual en esta practica ocuparemos un sensor (DTH11) para adquirir temperatura y humedad del entorno, tambien utilizaremos el programa Node-red para trabajar de manera visual y esquematica la programación grafica del flujo de la información, la cual podremos observar los resultados en la interfaz de Node-Red; cabe aclarar que en esta practica se usara un simulador llamado WOKWI y un programa llamado Node-RED.
+
+REQUISITOS
+
+Para poder usar este repositorio necesitas entrar a la plataforma WOKWI y tener instalado correctamente el programa Node-RED.
+
+INSTRUCCIONES
+
+1- Abrir la terminal de programación y colocar la siguente programación:
+
+PROGRAMACIÓN DE ESP32
 
 #include <ArduinoJson.h>
 #include <WiFi.h>
@@ -138,3 +152,23 @@ TempAndHumidity  data = dhtSensor.getTempAndHumidity();
     client.publish("Diplomado", output.c_str());
   }
 }
+
+2- Instalar las librerias de DHT sensor library for ESPx, PubSubClient y ArduinoJson.
+
+3- Hacer la conexion de DHT11 con la ESP32.
+
+![Captura de pantalla 2024-01-20 084422](https://github.com/robertopatino42/PR-CTICA-8/assets/153964688/bf08a6a9-e467-4980-89bc-0293b68ed27e)
+
+
+4- Cambiando al programa de Node-RED primero tendran que colocar el bloque de mqtt in, posteriormente los siguientes bloques.
+
+![Captura de pantalla 2024-01-20 084320](https://github.com/robertopatino42/PR-CTICA-8/assets/153964688/02c32cde-6e80-4ae4-b63c-f7304cde12e1)
+
+5- La conexiónfinal del NODE-RED y la ESP32 quedaría de esta manera.
+
+![Captura de pantalla 2024-01-20 084520](https://github.com/robertopatino42/PR-CTICA-8/assets/153964688/dbb4c1f3-36b0-4715-a1af-889eca8fce23)
+
+
+
+
+
